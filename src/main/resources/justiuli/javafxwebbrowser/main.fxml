@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="justiuli.javafxwebbrowser.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1F1F1F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justiuli.javafxwebbrowser.BrowserController">
+    <stylesheets>
+        <URL value="@css/appStyles.css" />
+    </stylesheets>
+    <SplitPane fx:id="splitPane" dividerPositions="0.7253521126760564" layoutX="3.0" layoutY="33.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="33.0">
+        <TabPane fx:id="tabPane" prefHeight="678.0" prefWidth="758.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <Tab text="Start Tab">
+                <WebView fx:id="webView" prefWidth="1280.0" style="-fx-background-color: #1F1F1F;" />
+            </Tab>
+        </TabPane>
+
+        <VBox fx:id="htmlViewerVBOX" prefHeight="800.0" prefWidth="168.0" spacing="10" styleClass="html-viewer">
+            <Label styleClass="label-title" text="HTML Preview" />
+            <Label styleClass="label-warning" text="This feature is prone to bugs and is still a work in progress." />
+            <TextArea fx:id="htmlTextArea" editable="false" prefHeight="688.0" prefWidth="348.0" styleClass="code-area" wrapText="true" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+    </SplitPane>
+    <TextField fx:id="searchTextField" layoutX="332.0" layoutY="2.0" prefHeight="33.0" prefWidth="944.0" promptText="Search the web" style="-fx-background-color: #141414; -fx-border-radius: 8px; -fx-text-fill: white; -fx-border-color: #666666;" AnchorPane.leftAnchor="332.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="2.0" />
+    <Button layoutX="66.0" layoutY="2.0" mnemonicParsing="false" onAction="#goForward" style="-fx-background-color: #212121; -fx-text-fill: white;" text="Forward" />
+    <Button layoutY="2.0" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #212121; -fx-text-fill: white;" text="Back" />
+    <Button layoutX="146.0" layoutY="2.0" mnemonicParsing="false" onAction="#refreshPage" style="-fx-background-color: #212121; -fx-text-fill: white;" text="Refresh" />
+    <Button layoutX="234.0" layoutY="2.0" mnemonicParsing="false" onAction="#addNewTab" style="-fx-background-color: #212121; -fx-text-fill: white;" text="New Tab" textFill="#212121" wrapText="true" />
+</AnchorPane>
