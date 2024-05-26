@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shell {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search__input {
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 500px;
+    transition: all ease-in-out 0.5s;
+    margin-right: 10px;
+}
+
+.search__input:focus {
+    outline: none;
+}
+
+.search__button {
+    font-size: 16px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search__button:hover {
+    background-color: #357AE8;
+}
+
+.bookmarks {
+    display: flex;
+}
+
+.bookmark {
+    margin-left: 5px;
+    padding-top:5px;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    border: 1px solid #1F1F1F;
+    transition: all 0.5ms ease-in-out;
+}
+
+.bookmark img {
+    width: 35px;
+    height: 35px;
+}
